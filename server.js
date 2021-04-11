@@ -1,13 +1,14 @@
-require("dotenv").config();
+// require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
+const booksRouter = require("./routes/books");
 
 // Setting up express server.
 const app = express();
 
 // Setting database connection.
-mongoose.connect(process.env.DATABASE_URL, {
+mongoose.connect("mongodb://localhost/books", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -19,7 +20,6 @@ db.once("open", () => console.log("Connected to database"));
 
 // Middleware config
 app.use(express.json());
-const booksRouter = require("./routes/books");
 app.use("/books", booksRouter);
 
 app.listen(3000, () => console.log("Server is running"));

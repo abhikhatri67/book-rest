@@ -8,6 +8,7 @@ const booksRouter = require("./routes/books");
 const app = express();
 
 // Setting database connection.
+// TODO: Change URL to mongodb://mongo:27018/books for docker.
 mongoose.connect("mongodb://localhost/books", {
   useNewUrlParser: true,
   useUnifiedTopology: true,

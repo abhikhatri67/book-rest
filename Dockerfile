@@ -1,8 +1,10 @@
-FROM node:12
+FROM node:12.13.0
 
 WORKDIR /usr/src/app
 
 COPY package*.json ./
+
+ENV MONGODB_URI='mongodb://localhost:27017/books'
 
 RUN npm install
 

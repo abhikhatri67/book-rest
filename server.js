@@ -9,7 +9,8 @@ const app = express();
 
 // Setting database connection.
 // TODO: Change URL to mongodb://mongo:27018/books for docker.
-mongoose.connect("mongodb://localhost/books", {
+// mongodb://localhost/books
+mongoose.connect("mongodb://mongo:27017/books", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
